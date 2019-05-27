@@ -1,0 +1,37 @@
+input {
+	kafka {
+		bootstrap_servers => "172.16.0.82:19092"
+		topics_pattern => "smm-v10-.*"
+		group_id => "smm-v10"
+		auto_offset_reset => "earliest"
+	}
+}
+
+filter {
+	mutate {
+	    rename  => [ "message", "msg" ]
+	}
+	json {
+	    source => ["msg"]
+	    remove_field => ["msg"]
+	    add_field => { "[@metadata][_index]" => "%{_index}" } 
+	    add_field => { "[@metadata][_type]" => "%{_type}" } 
+	    add_field => { "[@metadata][_id]" => "%{_id}" } 
+	    add_field => { "[@metadata][action]" => "%{action}" } 
+	    remove_field => [ "_index", "_type", "_id", "action"]
+	}
+}
+
+output {
+	stdout { codec => rubydebug }
+	elasticsearch {
+		hosts => "172.16.0.82:9200"
+		sniffing => true
+		retry_on_conflict => 10
+		http_compression => true
+		index => "%{[@metadata][_index]}"
+		document_type => "%{[@metadata][_type]}"
+		document_id => "%{[@metadata][_id]}"
+		action => "%{[@metadata][action]}"
+	}
+}
