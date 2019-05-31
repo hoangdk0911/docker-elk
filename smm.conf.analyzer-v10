@@ -26,7 +26,7 @@ output {
 	}
 	if [@metadata][_type] == "comment" {
 		elasticsearch {
-			hosts => "172.16.0.82:9200"
+			hosts => "115.84.183.195:9200"
 			sniffing => true
 			retry_on_conflict => 10
 			http_compression => true
@@ -38,7 +38,7 @@ output {
 		}
 	} else {
 		elasticsearch {
-			hosts => "172.16.0.82:9200"
+			hosts => "115.84.183.195:9200"
 			sniffing => true
 			retry_on_conflict => 10
 			http_compression => true
