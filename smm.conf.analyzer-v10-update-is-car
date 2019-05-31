@@ -1,6 +1,6 @@
 input {                                                                                                      
         kafka {                                                                                              
-                bootstrap_servers => "localhost:19092"                                                       
+                bootstrap_servers => "45.77.174.21:19092,45.77.174.21:29092,45.77.174.21:39092"                                                       
                 topics => ["feed-crawlerv10"]                                                               
                 group_id => "v10"                                                                            
                 auto_offset_reset => "earliest"                                                              
