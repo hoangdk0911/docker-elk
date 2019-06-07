@@ -1,6 +1,6 @@
 input {
        kafka {
-               bootstrap_servers => "139.180.142.45:19092,139.180.142.45:29092,139.180.142.45:39092"
+               bootstrap_servers => "207.148.71.63:19092,207.148.71.63:29092,207.148.71.63:39092"
                 topics_pattern => "(.*-analyzerv9-.*)"
                 group_id => "v10"
                 auto_offset_reset => "earliest"
