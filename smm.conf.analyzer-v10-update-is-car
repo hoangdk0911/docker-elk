@@ -1,8 +1,8 @@
 input {                                                                                                      
         kafka {                                                                                              
-                bootstrap_servers => "45.77.174.21:19092,45.77.174.21:29092,45.77.174.21:39092"                                                       
-                topics => ["feed-crawlerv10"]                                                               
-                group_id => "v10"                                                                            
+                bootstrap_servers => "139.180.142.45:19092,139.180.142.45:29092,139.180.142.45:39092"                                                
+                topics => ["update-related-v10"]                                                               
+                group_id => "update-related-v10"                                                                   
                 auto_offset_reset => "earliest"                                                              
         }                                                                                                    
 }                                                                                                            
@@ -24,7 +24,7 @@ filter {
 output {                                                                                                     
 #       stdout { codec => rubydebug }                                                                        
         elasticsearch {                                                                                      
-                        hosts => "115.84.183.195:9200"                                                       
+                        hosts => ["125.212.211.61:9200","125.212.211.60:9200","115.84.183.195:9200","139.99.62.235:9200","139.99.68.56:9200"]                                                     
                         sniffing => true                                                                     
                         retry_on_conflict => 10                                                              
                         http_compression => true                                                             
