@@ -12,7 +12,7 @@ filter {
             rename  => [ "message", "msg" ]
         }
         json {
-            source => ["message"]
+            source => ["msg"]
             add_field => { "[@metadata][_index]" => "%{_index}" }
             add_field => { "[@metadata][_type]" => "%{_type}" }
             add_field => { "[@metadata][_id]" => "%{_id}" }
