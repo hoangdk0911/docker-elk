@@ -1,7 +1,7 @@
 input {
   elasticsearch {
-    hosts => ["115.84.183.195:9200"]
-    index => "test-bikes"
+    hosts => ["localhost:9200"]
+    index => "smm-bikes"
     size => 200
     docinfo => true
     scroll => "5m"
@@ -26,8 +26,8 @@ filter {
 
 output {
   elasticsearch {
-    hosts => ["115.84.183.195:9200"]
-    index => "test-v10"
+    hosts => ["localhost:9200"]
+    index => "smm-v10-1"
     document_type => "feed"
     document_id => "%{platform}_%{id}"
     action => update

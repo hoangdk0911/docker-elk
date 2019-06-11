@@ -1,7 +1,7 @@
 input {
   elasticsearch {
     hosts => ["localhost:9200"]
-    index => "smm-celebrity"
+    index => "smm-bikes"
     size => 200
     docinfo => true
     scroll => "5m"
@@ -18,23 +18,11 @@ filter {
           "comment","%{industry}_",""
         ]
         remove_field => [ "logErrorCrawler","logDetailErrorCrawler","segments","topics","number_extracted_words","number_rejected_words","defaultAspects","defaultEntities","lastUpdateTime","pid","ptype","pindex","platfrom","unchangedTime","industry","isAd","isHam","isQuest","isSentiment","comments","undefined"]
-        copy => { "isCelebRelated" => "isSubjectRelated" }
+        copy => { "isCarRelated" => "isSubjectRelated" }
+        copy => { "lastUpdatedTime" => "@timestamp" }
         add_field => { 
           "industries" => [
-            "cars",
-            "bikes",
-            "football",
-            "mobile",
-            "celebrity",
-            "beauty_clinic",
-            "banks",
-            "fmcg",
-            "fashion",
-            "food_beverage",
-            "real_estate",
-            "insurance",
-            "education",
-            "airlines"
+            "bikes"
           ]
         }
     }

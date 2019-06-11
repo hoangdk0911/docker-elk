@@ -13,11 +13,13 @@ filter {
         }                                                                                                    
         json {                                                                                               
             source => ["msg"]                                                                                
-            add_field => { "[@metadata][_index]" => "%{_index}" }                                            
-            add_field => { "[@metadata][_type]" => "%{_type}" }                                              
-            add_field => { "[@metadata][_id]" => "%{_id}" }                                                  
-            add_field => { "[@metadata][action]" => "%{action}" }                                            
-            remove_field => ["msg", "_index", "_type", "_id", "action","@version","@timestamp"]              
+            add_field => { 
+                "[@metadata][_index]" => "%{_index}" 
+                "[@metadata][_type]" => "%{_type}"
+                "[@metadata][_id]" => "%{_id}" 
+                "[@metadata][action]" => "%{action}"
+            }                                           
+            remove_field => ["msg", "_index", "_type", "_id", "action"]              
         }                                                                                                    
 }                                                                                                            
                                                                                                              
