@@ -1,0 +1,3 @@
+- pipeline.id: smm-mobile-2018-01
+  path.config: "/usr/share/logstash/pipeline/crawler.conf"
+  pipeline.workers: 1
