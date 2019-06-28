@@ -1,3 +1,9 @@
-- pipeline.id: smm-mobile-2018-01
-  path.config: "/usr/share/logstash/pipeline/crawler.conf"
+- pipeline.id: crawler-feed
+  path.config: "/usr/share/logstash/pipeline/crawler-feed.conf"
   pipeline.workers: 1
+- pipeline.id: crawler-comment
+  path.config: "/usr/share/logstash/pipeline/crawler-comment.conf"
+  pipeline.workers: 1  
+- pipeline.id: crawler-page
+  path.config: "/usr/share/logstash/pipeline/crawler-page.conf"
+  pipeline.workers: 1  
