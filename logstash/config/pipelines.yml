@@ -7,3 +7,9 @@
 - pipeline.id: crawler-page
   path.config: "/usr/share/logstash/pipeline/crawler-page.conf"
   pipeline.workers: 1  
+- pipeline.id: crawler-e-commerce
+  path.config: "/usr/share/logstash/pipeline/crawler-e-commerce.conf"
+  pipeline.workers: 1
+- pipeline.id: crawler-hashtag
+  path.config: "/usr/share/logstash/pipeline/crawler-hashtag.conf"
+  pipeline.workers: 1   

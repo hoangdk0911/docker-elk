@@ -37,29 +37,29 @@ services:
       LS_JAVA_OPTS: "-Xmx2g -Xms2g"
     networks:
       - elk
-    depends_on:
-      - elasticsearch
+    # depends_on:
+    #   - elasticsearch
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
-  kibana:
-    build:
-      context: kibana/
-      args:
-        ELK_VERSION: $ELK_VERSION
-    volumes:
-      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
-    ports:
-      - "5601:5601"
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
+  # kibana:
+  #   build:
+  #     context: kibana/
+  #     args:
+  #       ELK_VERSION: $ELK_VERSION
+  #   volumes:
+  #     - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
+  #   ports:
+  #     - "5601:5601"
+  #   networks:
+  #     - elk
+  #   depends_on:
+  #     - elasticsearch
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "10m"
 networks:
 
   elk:
