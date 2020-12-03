@@ -3,12 +3,12 @@
 ## from https://github.com/elastic/logstash-docker/blob/master/build/logstash/config/logstash-full.yml
 #
 http.host: "0.0.0.0"
-xpack.monitoring.elasticsearch.hosts: [ "http://125.212.211.60:9201" ]
+# xpack.monitoring.elasticsearch.hosts: [ "http://125.212.211.60:9201" ]
 
 ## X-Pack security credentials
 #
-xpack.monitoring.enabled: true
+xpack.monitoring.enabled: false
 # xpack.monitoring.elasticsearch.username: elastic
 # xpack.monitoring.elasticsearch.password: hdk
-queue.type: persisted
-queue.max_bytes: 8gb
+# queue.type: persisted
+# queue.max_bytes: 8gb

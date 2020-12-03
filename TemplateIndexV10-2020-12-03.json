@@ -1,0 +1,271 @@
+{
+  "index_patterns": [
+    "smm-v10*"
+  ],
+  "template": {
+    "settings": {
+      "index": {
+        "number_of_shards": "5"
+      }
+    },
+    "mappings": {
+      "dynamic_templates": [
+        {
+          "tags_custom": {
+            "path_match": "tags_custom.*",
+            "mapping": {
+              "type": "keyword"
+            }
+          }
+        },
+        {
+          "tags_media": {
+            "path_match": "tags_media.*",
+            "mapping": {
+              "type": "keyword"
+            }
+          }
+        },
+        {
+          "tags_segment": {
+            "path_match": "tags_segment.*",
+            "mapping": {
+              "type": "keyword"
+            }
+          }
+        },
+        {
+          "tags_segment": {
+            "path_match": "attachments.*",
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "text",
+              "index": false
+            }
+          }
+        },
+        {
+          "named_analyzers": {
+            "mapping": {
+              "type": "keyword"
+            },
+            "match_mapping_type": "string",
+            "match": "*"
+          }
+        }
+      ],
+      "properties": {
+        "msg": {
+          "type": "text"
+        },
+        "@timestamp": {
+          "type": "date"
+        },
+        "@version": {
+          "index": false,
+          "type": "text"
+        },
+        "docType": {
+          "type": "keyword"
+        },
+        "article_id": {
+          "type": "keyword"
+        },
+        "article_type": {
+          "type": "keyword"
+        },
+        "category": {
+          "type": "keyword"
+        },
+        "category_id": {
+          "type": "keyword"
+        },
+        "channelId": {
+          "type": "keyword"
+        },
+        "commentsCount": {
+          "type": "long"
+        },
+        "createdTime": {
+          "type": "date"
+        },
+        "description": {
+          "type": "text"
+        },
+        "dislikesCount": {
+          "type": "long"
+        },
+        "favoritesCount": {
+          "type": "long"
+        },
+        "feed": {
+          "type": "keyword"
+        },
+        "from": {
+          "properties": {
+            "channel": {
+              "type": "keyword"
+            },
+            "fid": {
+              "type": "keyword"
+            },
+            "id": {
+              "type": "keyword"
+            },
+            "link": {
+              "type": "keyword"
+            },
+            "name": {
+              "type": "text"
+            }
+          }
+        },
+        "fullPicture": {
+          "type": "text",
+          "index": false
+        },
+        "id": {
+          "type": "keyword"
+        },
+        "isCarRelated": {
+          "type": "boolean"
+        },
+        "isExpired": {
+          "type": "boolean"
+        },
+        "isGroup": {
+          "type": "boolean"
+        },
+        "isHidden": {
+          "type": "boolean"
+        },
+        "isSubjectRelated": {
+          "type": "boolean"
+        },
+        "joinField": {
+          "properties": {
+            "name": {
+              "type": "keyword"
+            }
+          }
+        },
+        "lastAnalyzedTime": {
+          "type": "date"
+        },
+        "lastDirtyTime": {
+          "type": "date"
+        },
+        "lastUpdatedTime": {
+          "type": "date"
+        },
+        "lastVisitedTime": {
+          "type": "date"
+        },
+        "licensedContent": {
+          "type": "boolean"
+        },
+        "likesCount": {
+          "type": "long"
+        },
+        "limit": {
+          "type": "long"
+        },
+        "link": {
+          "type": "keyword"
+        },
+        "message": {
+          "type": "text"
+        },
+        "name": {
+          "type": "keyword"
+        },
+        "page": {
+          "type": "keyword"
+        },
+        "permalinkUrl": {
+          "type": "keyword"
+        },
+        "picture": {
+          "type": "text",
+          "index": false
+        },
+        "platform": {
+          "type": "keyword"
+        },
+        "privacy": {
+          "type": "text",
+          "index": false
+        },
+        "reactionsCount": {
+          "type": "long"
+        },
+        "reactionsSummary": {
+          "properties": {
+            "angry": {
+              "type": "long"
+            },
+            "haha": {
+              "type": "long"
+            },
+            "like": {
+              "type": "long"
+            },
+            "love": {
+              "type": "long"
+            },
+            "sad": {
+              "type": "long"
+            },
+            "wow": {
+              "type": "long"
+            }
+          }
+        },
+        "salePost": {
+          "type": "boolean"
+        },
+        "sharesCount": {
+          "type": "long"
+        },
+        "sign": {
+          "type": "text",
+          "index": false
+        },
+        "siteId": {
+          "type": "keyword"
+        },
+        "site_id": {
+          "type": "keyword"
+        },
+        "source": {
+          "type": "keyword"
+        },
+        "statusType": {
+          "type": "keyword"
+        },
+        "story": {
+          "type": "text",
+          "index": false
+        },
+        "tags": {
+          "type": "keyword"
+        },
+        "title": {
+          "type": "text"
+        },
+        "type": {
+          "type": "keyword"
+        },
+        "updatedTime": {
+          "type": "date"
+        },
+        "videoId": {
+          "type": "keyword"
+        },
+        "viewsCount": {
+          "type": "long"
+        }
+      }
+    }
+  }
+}
