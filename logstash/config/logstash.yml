@@ -10,5 +10,5 @@ xpack.monitoring.elasticsearch.hosts: [ "http://115.84.183.195:9201" ]
 xpack.monitoring.enabled: false
 # xpack.monitoring.elasticsearch.username: elastic
 # xpack.monitoring.elasticsearch.password: hdk
-queue.type: persisted
-queue.max_bytes: 4gb
+# queue.type: persisted
+# queue.max_bytes: 4gb

@@ -1,18 +1,9 @@
-- pipeline.id: smm-test
-  path.config: "/usr/share/logstash/pipeline/test.conf"
-  pipeline.workers: 1
-# - pipeline.id: crawler-feed
-#   path.config: "/usr/share/logstash/pipeline/crawler-feed.conf"
-#   pipeline.workers: 1
-# - pipeline.id: crawler-comment
-#   path.config: "/usr/share/logstash/pipeline/crawler-comment.conf"
-#   pipeline.workers: 1
-# - pipeline.id: crawler-page
-#   path.config: "/usr/share/logstash/pipeline/crawler-page.conf"
-#   pipeline.workers: 1
-# - pipeline.id: crawler-e-commerce
-#   path.config: "/usr/share/logstash/pipeline/crawler-e-commerce.conf"
-#   pipeline.workers: 1
-# - pipeline.id: crawler-hashtag
-#   path.config: "/usr/share/logstash/pipeline/crawler-hashtag.conf"
-#   pipeline.workers: 1
+- pipeline.id: smm-comment
+  path.config: "/usr/share/logstash/pipeline/smm-comment.conf"
+  queue.type: persisted
+- pipeline.id: smm-feed
+  path.config: "/usr/share/logstash/pipeline/smm-feed.conf"
+  queue.type: persisted
+- pipeline.id: smm-share
+  path.config: "/usr/share/logstash/pipeline/smm-share.conf"
+  queue.type: persisted
